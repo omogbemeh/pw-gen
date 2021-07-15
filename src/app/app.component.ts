@@ -42,7 +42,8 @@ export class AppComponent {
       this.enableNumbers ||
       this.enableSymbols;
   }
-  generatePassword() {
+  generatePassword(e: any) {
+    e.preventDefault();
     this.isClicked = true;
     this.viewPassword =
       this.length >= 1 && this.isClicked && this.optionSelected;

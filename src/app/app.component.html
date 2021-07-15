@@ -1,32 +1,34 @@
 <main>
-    <h1>Password Generator</h1>
-    <div class="input-field">
-        <label required for="pw-length">Length</label>
-        <input id="pw-length" type="number" placeholder="Enter Length of Password" class="input" #input (change)="this.length=+input.value" (keyup.enter)="onSubmit(input)" />
-        <!-- <p class="select" *ngIf="this.length === 0 || !this.isClicked">Enter a Valid Length.. 1+
-        </p> -->
-    </div>
-    <h4>Choose the characters you want in your Password</h4>
-    <div class="check-box-field">
-        <input (change)="onChange($event)" id="letters" type="checkbox">
-        <label for="letters">Enable Letters</label>
-    </div>
-    <div class="check-box-field">
-        <input (change)="onChange($event)" id="capLetters" type="checkbox">
-        <label for="capLetters">Enable Capital Letters</label>
-    </div>
-    <div class="check-box-field">
-        <input (change)="onChange($event)" id="numbers" type="checkbox">
-        <label for="numbers">Enable Numbers</label>
-    </div>
-    <div class="check-box-field">
-        <input (change)="onChange($event)" id="symbols" type="checkbox">
-        <label for="symbols">Enable symbols</label>
-    </div>
-    <p class="select" *ngIf="this.length >1 && !this.optionSelected || this.isClicked">Select AT LEAST one option above
-    </p>
-    <button (click)="generatePassword()" [disabled]="this.isClicked" class="generate-button">Generate
-    Password</button>
+    <form>
+        <h1>Password Generator</h1>
+        <div class="input-field">
+            <label required for="pw-length">Length</label>
+            <input required id="pw-length" type="number" placeholder="Enter Length of Password" class="input" #input (change)="this.length=+input.value" (keyup.enter)="onSubmit(input)" />
+            <p class="select" *ngIf="(this.length < 0 || !this.length) && this.isClicked === true">Enter a Valid Length.. 1+
+            </p>
+        </div>
+        <h4>Choose the characters you want in your Password</h4>
+        <div class="check-box-field">
+            <input (change)="onChange($event)" id="letters" type="checkbox">
+            <label for="letters">Enable Letters</label>
+        </div>
+        <div class="check-box-field">
+            <input (change)="onChange($event)" id="capLetters" type="checkbox">
+            <label for="capLetters">Enable Capital Letters</label>
+        </div>
+        <div class="check-box-field">
+            <input (change)="onChange($event)" id="numbers" type="checkbox">
+            <label for="numbers">Enable Numbers</label>
+        </div>
+        <div class="check-box-field">
+            <input (change)="onChange($event)" id="symbols" type="checkbox">
+            <label for="symbols">Enable symbols</label>
+        </div>
+        <p class="select" *ngIf="this.length >1 && !this.optionSelected || this.isClicked">Select AT LEAST one option above
+        </p>
+        <button type="submit" (click)="generatePassword($event)" [disabled]="this.isClicked" class="generate-button">Generate
+      Password</button>
+    </form>
     <br>
     <div class="generated-password" *ngIf="this.viewPassword">
         <div class="gen-pass-box">
