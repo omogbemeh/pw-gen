@@ -1,0 +1,89 @@
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    width: 100%;
+}
+
+.input-field {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.input {
+    margin-top: 0.5rem;
+    padding: 1rem 1rem;
+    background: #f5f5f5;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.check-box-field {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.check-box-field input {
+    margin-right: 0.5rem;
+}
+
+.select {
+    margin-top: 1rem;
+    color: tomato;
+    border-left: 3px solid black;
+    padding: 0.5rem;
+    white-space: wrap;
+}
+
+.generate-button {
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem;
+    background: #77af66;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.generated-password {
+    border: 2px solid #000;
+    padding: 2rem;
+}
+
+.gen-pass-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.close-div {
+    font-size: 1.5rem;
+    color: tomato;
+    padding: 0.5rem;
+}
+
+.password {
+    margin: 1rem 0;
+    cursor: pointer;
+    background: blanchedalmond;
+    font-weight: bold;
+    padding: 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.generated-password small {
+    padding-left: 0.5rem;
+    border-left: 3px solid #000;
+    color: #77af66;
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    color: #333;
+}
